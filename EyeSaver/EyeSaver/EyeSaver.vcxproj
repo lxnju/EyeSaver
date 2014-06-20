@@ -103,6 +103,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ConfigScreensaver.h" />
     <ClInclude Include="EyeSaver.h" />
     <ClInclude Include="EyeSaverDlg.h" />
     <ClInclude Include="Resource.h" />
@@ -110,6 +111,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ConfigScreensaver.cpp" />
     <ClCompile Include="EyeSaver.cpp" />
     <ClCompile Include="EyeSaverDlg.cpp" />
     <ClCompile Include="stdafx.cpp">

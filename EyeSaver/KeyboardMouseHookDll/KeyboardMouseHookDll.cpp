@@ -24,7 +24,7 @@ extern HMODULE g_mod;
 __declspec(dllexport) void SetKeyboardMouseHook()
 {
 	g_keyboardHook = SetWindowsHookEx(WH_KEYBOARD, KeyboardProc, g_mod, 0);
-	if (!KeyboardProc)
+	if (!g_keyboardHook)
 	{
 		OutputDebugString(L"failed to set keyboard hook");
 		return;

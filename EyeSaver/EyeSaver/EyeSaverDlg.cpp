@@ -7,6 +7,7 @@
 #include "EyeSaverDlg.h"
 #include "afxdialogex.h"
 #include "..\KeyboardMouseHookDll\KeyboardMouseHookDll.h"
+#include "ConfigScreensaver.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -109,7 +110,13 @@ BOOL CEyeSaverDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// Set small icon
 
 	// TODO: Add extra initialization here
-
+	CConfigScreensaver css;
+	
+	if (! css.ConfigBubble())
+	{
+		// warn user that screen saver is not configured and exit.
+		MessageBox(L"Faied to configure your Screen Saver setting, please configure your Screen Saver to bubble and restart this application.");
+	}
 	// set system tray icon
 	m_notify.cbSize = sizeof NOTIFYICONDATA;
 	m_notify.hWnd = this->m_hWnd;	
