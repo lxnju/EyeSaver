@@ -116,6 +116,8 @@ BOOL CEyeSaverDlg::OnInitDialog()
 	{
 		// warn user that screen saver is not configured and exit.
 		MessageBox(L"Faied to configure your Screen Saver setting, please configure your Screen Saver to bubble and restart this application.");
+		ASSERT(AfxGetMainWnd() != NULL);
+        AfxGetMainWnd()->SendMessage(WM_CLOSE);
 	}
 	// set system tray icon
 	m_notify.cbSize = sizeof NOTIFYICONDATA;
